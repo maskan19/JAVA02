@@ -1,0 +1,25 @@
+package kr.or.ddit.basic;
+
+import java.util.Vector;
+
+public class VectorTest {
+	
+	public static void main(String[] args) {
+		//객체 생성 - old version
+		Vector v1 = new Vector<>();
+		
+		System.out.println("처음 크기 : " + v1.size());
+		
+		//데이터 추가 : add(추가할 데이터)
+		//반환값 : 추가 성공시 true, 실패시 false
+		v1.add("aaa"); //객체형 데이터만 저장할 수 있음
+		v1.add(new Integer(111));
+		v1.add(333);
+		System.out.println(v1.size());
+		
+		
+		
+		
+	}
+
+}

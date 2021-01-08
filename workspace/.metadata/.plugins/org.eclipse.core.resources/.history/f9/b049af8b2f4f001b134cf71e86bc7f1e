@@ -1,0 +1,23 @@
+package kr.or.ddit.basic;
+
+/*
+ * 문제) 학번, 이름, 국어점수, 영어점수, 수학점수, 총점, 등수를 멤버로 갖는 Student 클래스를 작성한다.
+ * 이 클래스의 생성자에서는 학번, 이름, 국어점수, 영어점수, 수학점수만 매개변수로 받아서 초기화 처리한다.
+ * 이 Student 객체는 List에 저장하여 관리한다.
+ */
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Student{
+	
+	
+}
+
+

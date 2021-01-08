@@ -1,0 +1,22 @@
+package kr.or.ddit.basic;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class seat {
+	
+	
+	
+	
+	
+	public static String seat(String str1, String str2, String str3){
+		List<String> vol = new ArrayList<>();
+		vol.add(str1);
+		vol.add(str2);
+		vol.add(str3);
+		String m = vol.get((int)(Math.random() * vol.size()));
+		return m;
+	}
+
+}

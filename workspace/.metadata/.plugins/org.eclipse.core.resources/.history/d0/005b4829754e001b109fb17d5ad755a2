@@ -1,0 +1,35 @@
+package kr.or.ddit.basic;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+//	문제1) 5명의 별명을 입력 받아 ArrayList에 저장하고 이들 중 별명의 길이가 제일 긴 별명을 출력하시오.
+//	(단, 각 별명의 길이는 모두 다르게 입력한다.)
+//	문제2) 문제1에서 별명의 길이가 같은 것을 입력할 수 있을 경우를 처리하시오. 
+
+public class ArrayListTest03 {
+	
+	public static void main(String[] args) {
+		
+		List<String> aliases = new ArrayList<>();
+		for(int i = 1; i<=5; i++){
+		System.out.println("별명" + i + " 입력 :");
+		Scanner s = new Scanner(System.in);
+		String alias = s.nextLine();
+		aliases.add(alias);
+		}
+		
+		String longest  = "";
+		for(int i = 0; i<aliases.size(); i++){
+			if(aliases.get(i).length()>longest.length()){
+				longest= aliases.get(i);
+			}
+		}
+		System.out.println("제일 긴 별명 : " + longest);
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,96 @@
+package kr.or.ddit.basic;
+
+import java.util.Vector;
+
+public class VectorTest {
+	
+	public static void main(String[] args) {
+		//객체 생성 - old version
+		Vector v1 = new Vector<>();
+		
+		System.out.println("처음 크기 : " + v1.size());
+		
+		//데이터 추가 : add(추가할 데이터)
+		//반환값 : 추가 성공시 true, 실패시 false
+		v1.add("aaa"); //객체형 데이터만 저장할 수 있음
+		v1.add(new Integer(111));
+		v1.add(333); // 오토박싱 : 기본 자료형을 랩퍼 클래스형으로 자동 변환
+					 // 오토언박싱 : 랩퍼 클래스형을 기본 자료형으로 자동 변환
+		v1.add('a');
+		v1.add(true);
+		boolean check = v1.add(3.14);
+		System.out.println("현재크기  : " + v1.size());
+		System.out.println("반환값 : " + check);
+		
+		//데이터 추가 : addElement(추가할 데이터)
+		//이전 버전의 프로그래멩서도 사용 가능 하도록 하기 위해 남아 있는 메서드
+		v1.addElement("DDD");
+		System.out.println("v1 > " + v1.toString());
+		System.out.println("v1 > " + v1);//생략 가능
+		
+		//데이터 추가 : add(index, 추가할 데이터)
+		//index번째에 '추가할 데이터'를 끼워 넣는다.
+		//반환값은 없다.
+		v1.add(1,"KKK");
+		System.out.println("v1 > " + v1);
+		
+		//데이터 수정 : set(index, 새로운 데이터)
+		// index번쨰의 데이터를 '새로운 데이터'로 덮어쓴다.
+		// 반환값 : 원래의 데이터
+		String temp = (String)v1.set(1, "zzz");//가져올 당시에는 Object형인데 temp가 String객체> 형변환을 해주어야함
+		System.out.println("v1 > " + v1);
+		System.out.println("반환값 " + v1);
+		
+		//데이터 꺼내오기 : get(index)
+		//index번째의 데이터를 반환한다.
+		int data = (int)v1.get(2);
+		System.out.println("2번째 자료 : "+ data);
+		
+		//데이터 삭제 : remove(index)
+		//index번째의 데이터를 삭제한다.
+		//반환값 : 삭제된 데이터
+		v1.remove(0);
+		System.out.println("v1 > " + v1);
+		temp = (String)v1.remove(0);
+		System.out.println("삭제된 데이터 " + temp);
+		System.out.println("v1 > " + v1);
+		
+		//데이터 삭제 : remove(삭제할 데이터)
+		//'삭제할 데이터'를 찾아서 삭제한다.
+		//'삭제할 데이터'가 여러개이면 앞에서부터 삭제된다.
+		//반환값 : 삭제 성공시 true, 실패시 false
+		v1.remove("DDD");
+		System.out.println("삭제후 v1 = " + v1);
+		
+//		v1.remove(111); //데이터 111 삭제가 아니라 111인덱스 자료를 삭제하는 것으로 인식
+		v1.remove(new Integer(111));
+		System.out.println("삭제후 v1 = " + v1);
+		
+//		v1.remove('a'); // 문자 a가 아니라 숫자 97을 의미함
+		v1.remove(new Character('a'));
+		System.out.println("삭제후 v1 = " + v1);
+		
+		v1.remove(true);
+		v1.remove(3.14)
+		
+		////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
