@@ -31,7 +31,9 @@ public class HotelRoomService {
 				hr.setRoomK(rNm);
 				hr.setName("-");
 				reserv.put(rNo + i, hr);
+				// System.out.println(hr);
 			}
+			// System.out.println(reserv);
 		}
 
 		System.out.println("*********************************************\n"

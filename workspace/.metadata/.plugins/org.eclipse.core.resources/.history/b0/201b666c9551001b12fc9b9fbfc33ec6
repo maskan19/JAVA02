@@ -31,9 +31,11 @@ public class HotelRoomService {
 				hr.setRoomK(rNm);
 				hr.setName("-");
 				reserv.put(rNo + i, hr);
+//				System.out.println(hr);
 			}
+//			System.out.println(reserv);
 		}
-
+		
 		System.out.println("*********************************************\n"
 				+ "       호텔문을 열었습니다. 어서오십시요.\n"
 				+ "*********************************************");
@@ -73,7 +75,8 @@ public class HotelRoomService {
 				+ "----------------------------------------------\n"
 				+ "   체크인 작업\n"
 				+ "----------------------------------------------\n"
-				+ " * 201~209 : 싱글룸\n" + " * 301~309 : 더블룸\n"
+				+ " * 201~209 : 싱글룸\n"
+				+ " * 301~309 : 더블룸\n"
 				+ " * 401~409 : 스위트룸\n"
 				+ "----------------------------------------------\n"
 				+ "방 번호 입력 >>");
@@ -97,7 +100,8 @@ public class HotelRoomService {
 				+ "----------------------------------------------\n"
 				+ "   체크아웃 작업\n"
 				+ "----------------------------------------------\n"
-				+ "체크아웃 할 방 번호를 입력하세요.\n" + "방번호 입력 >>");
+				+ "체크아웃 할 방 번호를 입력하세요.\n"
+				+ "방번호 입력 >>");
 		String rn = s.nextLine();
 		int intrn = Integer.parseInt(rn);
 		if (!reserv.containsKey(intrn)) {
@@ -105,8 +109,7 @@ public class HotelRoomService {
 		} else if (reserv.get(intrn).getName().equals("-")) {
 			System.out.println(intrn + "호 객실에는 체크인 한 사람이 없습니다.");
 		} else {
-			System.out.println(intrn + "호 객실의 " + reserv.get(intrn).getName()
-					+ "님 체크아웃을 완료하였습니다.");
+			System.out.println(intrn + "호 객실의 "+reserv.get(intrn).getName()+"님 체크아웃을 완료하였습니다.");
 			reserv.get(intrn).setName("-");
 		}
 	}
@@ -120,16 +123,17 @@ public class HotelRoomService {
 				+ "----------------------------------------------");
 		List<Room> room = new ArrayList<>(reserv.values());
 		Collections.sort(room);
-		for (Room rn : room) {
-			System.out.println(rn.getRoomNo() + "\t" + rn.getRoomK() + "\t"
-					+ rn.getName());
+		for(Room rn : room){
+		System.out.println(rn.getRoomNo() +"\t" +rn.getRoomK() +"\t" +rn.getName());
 		}
-
+		
+		
+		
 	}
 
 }
 
-class Room implements Comparable<Room> {
+class Room implements Comparable<Room>{
 	int roomNo;
 	String roomK;
 	String name;
@@ -157,17 +161,16 @@ class Room implements Comparable<Room> {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	@Override
 	public String toString() {
 		return "Room [roomNo=" + roomNo + ", roomK=" + roomK + ", name=" + name
 				+ "]";
 	}
-
+	
 	@Override
 	public int compareTo(Room o) {
 		// TODO Auto-generated method stub
 		return new Integer(roomNo).compareTo(o.roomNo);
 	}
-
+	
 }
