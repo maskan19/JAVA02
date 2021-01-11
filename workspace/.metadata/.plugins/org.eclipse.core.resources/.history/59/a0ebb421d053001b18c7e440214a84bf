@@ -131,14 +131,11 @@ public class EnumTest {
 
 		//열거형명.values()메서드 : 모든 상수들을 배열로 가져온다.
 		for(Season time : Season.values()){
-			System.out.println(time.name() + "==" + time + //name == 변수 자체 
-					" : " + time.getSpan() + time.getStartMonth());
+			System.out.println(time.name() + "==" + time + ">" + time.getSpan() + time.getStartMonth());
 		}
-		System.out.println();
 		
-		for(Color col : Color.values()){
-			System.out.println(col + " ==> " + col.ordinal());
-		}
+		
+		
 		
 		
 		

@@ -1,7 +1,5 @@
 package kr.or.ddit.basic;
 
-import java.io.ObjectInputStream.GetField;
-
 /*
  * - enum(열거형) : 서로 관련있는 상수들의 집합을 나타낸다.
  * 클래스처럼 보이게 하는 상수
@@ -56,28 +54,7 @@ public class EnumTest {
 		봄("3월부터 5월까지",3), 
 		여름("6월부터 8월까지",6),
 		가을("9월부터 11월까지",9),
-		겨울("12월부터 2월까지",12);
-		
-		private String span;
-		private int startMonth;
-		
-		Season(String span, int startMonth){
-//			생략해도 private Season(String span, int startMonth){}와 동일
-			this.span = span;
-			this.startMonth = startMonth;
-		}
-
-		public String getSpan() {
-			return span;
-		}
-
-		public int getStartMonth() {
-			return startMonth;
-		}
-
-		//getter 메서드만 생성
-	
-		
+		겨울("12월부터 2월까지",12)
 	}
 
 	public static void main(String[] args) {
@@ -121,63 +98,8 @@ public class EnumTest {
 			System.out.println("상수 THREE");
 			break;
 		}
-		System.out.println("---------------------");
 		
-		Season ss = Season.valueOf("봄");
-		System.out.println("name : " + ss.name()); //봄
-		System.out.println("ordinal : " + ss.ordinal()); //0
-		System.out.println("span : " + ss.span);
-		System.out.println("startMonth : " + ss.getStartMonth());
 
-		//열거형명.values()메서드 : 모든 상수들을 배열로 가져온다.
-		for(Season time : Season.values()){
-			System.out.println(time.name() + "==" + time + //name == 변수 자체 
-					" : " + time.getSpan() + time.getStartMonth());
-		}
-		System.out.println();
-		
-		for(Color col : Color.values()){
-			System.out.println(col + " ==> " + col.ordinal());
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }

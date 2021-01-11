@@ -1,7 +1,5 @@
 package kr.or.ddit.basic;
 
-import java.io.ObjectInputStream.GetField;
-
 /*
  * - enum(열거형) : 서로 관련있는 상수들의 집합을 나타낸다.
  * 클래스처럼 보이게 하는 상수
@@ -124,60 +122,9 @@ public class EnumTest {
 		System.out.println("---------------------");
 		
 		Season ss = Season.valueOf("봄");
-		System.out.println("name : " + ss.name()); //봄
-		System.out.println("ordinal : " + ss.ordinal()); //0
-		System.out.println("span : " + ss.span);
-		System.out.println("startMonth : " + ss.getStartMonth());
+		System.out.println("name : " + ss.name());
+		System.out.println("ordinal : " + ss.ordinal());
 
-		//열거형명.values()메서드 : 모든 상수들을 배열로 가져온다.
-		for(Season time : Season.values()){
-			System.out.println(time.name() + "==" + time + //name == 변수 자체 
-					" : " + time.getSpan() + time.getStartMonth());
-		}
-		System.out.println();
-		
-		for(Color col : Color.values()){
-			System.out.println(col + " ==> " + col.ordinal());
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
