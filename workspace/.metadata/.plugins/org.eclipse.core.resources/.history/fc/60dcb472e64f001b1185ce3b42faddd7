@@ -1,0 +1,17 @@
+package kr.or.ddit.basic;
+
+public class SetText {
+
+	public static void main(String[] args) {
+
+		/*
+		 * - List와 Set의 차이
+		 * 
+		 * 
+		 * 
+		 */
+		
+
+	}
+
+}

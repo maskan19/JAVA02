@@ -1,0 +1,10 @@
+package kr.or.ddit.basic;
+
+public class ThreadTest03 {
+
+	public static void main(String[] args) {
+	
+		//쓰레드가 수행되는 시간을 체크해보자.
+	}
+	
+}
