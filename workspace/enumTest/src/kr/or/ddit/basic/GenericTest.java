@@ -1,15 +1,14 @@
 package kr.or.ddit.basic;
 
-
 class NonGenericClass {
 	private Object value;
 	public int kor;
 
-	public void setKor(int kor){
-		
-		if(kor<0||kor>100){
+	public void setKor(int kor) {
+
+		if (kor < 0 || kor > 100) {
 			this.kor = 0;
-		}else{
+		} else {
 			this.kor = kor;
 		}
 	}
@@ -22,16 +21,12 @@ class NonGenericClass {
 		this.value = value;
 	}
 
-	
-	
-	
-	
-//	--제네릭 타입 글자로 많이 사용되는 것 --
-//	T : Type
-//	K : Key
-//	V : Value
-//	E : Element(자료구조에 들어가는 것들을 주로 나타낸다.)
-	
+	// --제네릭 타입 글자로 많이 사용되는 것 --
+	// T : Type
+	// K : Key
+	// V : Value
+	// E : Element(자료구조에 들어가는 것들을 주로 나타낸다.)
+
 }
 
 class MyGeneric<T> {
@@ -82,8 +77,7 @@ public class GenericTest {
 
 		System.out.println("문자열 반환값 : " + rtnMg1);
 		System.out.println("숫자 반환값 : " + rtnMg2);
-		
-		
+
 	}
 
 }

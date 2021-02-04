@@ -27,7 +27,7 @@ public class ThreadTest07 {
 	
 	public static void main(String[] args) {
 		RSP rsp = new RSP();
-		counter ct = new counter();
+		timer ct = new timer();
 		rsp.start();
 		ct.start();
 		
@@ -36,21 +36,23 @@ public class ThreadTest07 {
 
 }
 
-class counter extends Thread{
+class timer extends Thread{
 	@Override
 	public void run() {
+		System.out.println("카운트다운 시작");
 		for(int i = 5; i>0; i--){
-			System.out.println(i + "초 경과");
 			if(RSP.inputCheck == true){
 				return;
 			}
+			System.out.println(i + "초 경과");
 			
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
 			}
 		}
-		System.out.println("시간 초과");
+		System.out.println("--결과--");
+		System.out.println("시간 초과로 당신이 졌습니다.");
 		System.exit(0);
 	}
 	
@@ -64,17 +66,17 @@ class RSP extends Thread{
 		int ans = JOptionPane.showOptionDialog(null, "가위 바위 보 !!", "5초 내로 입력하시오", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, rsp, null);
 		inputCheck = true;
 		int comans = (int)(Math.random()*3);
-//		System.out.println(comans);
-//		System.out.println("사용자" + rsp[ans]);
-//		System.out.println("컴" + rsp[comans]);
+		System.out.println("--결과--");
+		System.out.println("사용자 : " + rsp[ans]);
+		System.out.println("컴퓨터 : " + rsp[comans]);
 		if(ans+1 >2){
 			ans = ans-3;
 		}
 		if(ans+1 == comans){
-			System.out.println("패배");
+			System.out.println("결   과 : 당신이 졌습니다.");
 		} else if(ans == comans){
-			System.out.println("무승부");
-		} else System.out.println("승리");
+			System.out.println("결   과 : 무승부입니다.");
+		} else System.out.println("결   과 : 당신이 이겼습니다.");
 		
 	}
 	
