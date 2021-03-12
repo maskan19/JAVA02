@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<people>
+	<person id = "1">
+		<lastname>Doe</lastname>
+		<firstname>John</firstname>
+	</person>
+	<person id = "2">
+		<lastname>Smith</lastname>
+		<firstname>Jim</firstname>
+	</person>
+	<person id = "3">
+		<lastname>연석</lastname>
+		<firstname>유</firstname>
+	</person>
+	<person id = "4">
+		<lastname>정석</lastname>
+		<firstname>조</firstname>
+	</person>
+</people>

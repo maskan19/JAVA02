@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<People>
+	<person>
+		<name>홍길동</name>
+		<age>30</age>
+		<gender>남자</gender>
+		<dept>웹 개발부서</dept>
+	</person>
+	
+	<person>
+		<name>일지매</name>
+		<age>20</age>
+		<gender>남자</gender>
+		<dept>마케팅부서</dept>
+	</person>
+	
+	<person>
+		<name>김영희</name>
+		<age>27</age>
+		<gender>여자</gender>
+		<dept>웹 컨텐츠 개발부서</dept>
+	</person>
+	
+	<person>
+		<name>유연석</name>
+		<age>36</age>
+		<gender>남자</gender>
+		<dept>아티스트</dept>
+	</person>
+</People>

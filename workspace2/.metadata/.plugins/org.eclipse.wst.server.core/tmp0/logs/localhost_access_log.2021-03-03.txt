@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:08 +0900] "GET /filetest/fileUploadServlet.do HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:08 +0900] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [03/Mar/2021:14:49:08 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:11 +0900] "GET /filetest/fileUploadServlet.do HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:12 +0900] "GET /filetest/fileUploadServlet.do HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:12 +0900] "GET /filetest/fileUploadServlet.do HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:12 +0900] "GET /filetest/fileUploadServlet.do HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:25 +0900] "GET /filetest//jsp/memberInsert.do HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:30 +0900] "GET /filetest/jsp/memberInsert.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:30 +0900] "GET /filetest/memberList.jsp HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:49:59 +0900] "GET /filetest/jsp/memberList.do HTTP/1.1" 200 2389
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:50:01 +0900] "GET /filetest/member/memberForm.ddit HTTP/1.1" 404 1013
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:50:03 +0900] "GET /filetest/jsp/memberView.ddit?mem_id=qweqwe@naver.com HTTP/1.1" 404 1007
+127.0.0.1 - - [03/Mar/2021:14:51:28 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [03/Mar/2021:14:51:29 +0900] "GET /filetest/fileuploader.jsp HTTP/1.1" 200 1922

@@ -1,0 +1,7 @@
+1611822665566	Delete element
+1611822690865	Rename type 'MemberVO'
+1611822696188	Rename type 'MemberServiceImpl'
+1611822703005	Rename type 'IMemberService'
+1611822707153	Rename type 'MemberDaoImpl'
+1611822711487	Rename type 'IMemberDao'
+1611822718985	Rename type 'MemberController'

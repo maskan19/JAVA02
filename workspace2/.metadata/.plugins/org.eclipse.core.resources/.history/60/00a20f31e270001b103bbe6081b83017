@@ -1,0 +1,61 @@
+package kr.or.ddit.basic.fileupload;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class DownloadServlet
+ */
+@WebServlet("/downloadServlet.do")
+public class DownloadServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int buffer_size = 1024 * 100;
+		request.setCharacterEncoding("utf-8");
+		String fileName = request.getParameter("filename");
+		String downloadPath = "d:/d_other/uploadFiles";
+		String filePath = downloadPath + File.separator + fileName;
+
+		File file = new File(filePath);
+		OutputStream outstream = null;
+		FileInputStream fin = null;
+		if (file.exists()) { // Download할 파일이 있는지 검사
+			// Download진행 순서
+			// 1. ContentType 설정
+			response.setContentType("application/octet-stream; charset=utf-8");
+
+			// 2. Response객체의 헤더에 'Content-Disposition'속성을 설정한다.
+			String headerKey = "Content-Disposition";
+			String headerValue = "attachment; filename=\"" + file.getName() + "\";";
+			response.setHeader(headerKey, headerValue);
+
+			// 3. 디스크에서 파일을 읽어서 클라이언트로 전송
+			try {
+				outstream = response.getOutputStream();
+
+			} catch (IOException e) {
+				// TODO: handle exception
+			}
+		} else {
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/html; charset=utf-8");
+			response.getWriter().println("<h3>" + fileName + " 파일은 존재하지 않습니다.</h3>");
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

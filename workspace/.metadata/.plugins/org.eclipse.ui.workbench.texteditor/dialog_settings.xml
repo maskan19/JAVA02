@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="463" key="DIALOG_Y_ORIGIN"/>
+		<item value="729" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="존재하지" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="존재하지"/>
+			<item value="번글"/>
+			<item value="등록된"/>
+			<item value="TEL"/>
+			<item value="ID"/>
+			<item value="next"/>
+			<item value="read"/>
+			<item value="util"/>
+			<item value="DBUtil"/>
+			<item value="eption e) {"/>
+		</list>
+		<list key="replacehistory">
+			<item value="phoneData.dat"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="304" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|-127|3|2|1|50|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="410" key="DIALOG_HEIGHT"/>
+		<item value="286" key="DIALOG_Y_ORIGIN"/>
+		<item value="827" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,72 @@
+package kr.or.ddit.basic.fileupload;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/*
+ * Servlet 3.0이상에서 파일 업로드를 하려면 @MultipartConfig 애노테이션을 설정해야한다.
+ * -@MultipartConfig 애노테이션에서 설정할 변수들
+ * 1. fileSizeThreshold: 이곳에 지정한 크기가 넘어가면 디스크의 임시 디렉토리에 저장한다.
+ * (단위: byte, 기본값: 0 (즉, 지정하지 않으면 무조건 임시 디렉토리를 사용한다.)
+ * 2. maxFileSize: 파일 1개의 최대 크기(단위: byte, 기본값:-1L(무제한))
+ * 3. maxRequestSize: 서버로 전송되는 request의 최대 크기
+ * (단위: byte, 기본값: -1L(무제한))
+ * 4. location: Part.write()메서드를 통해서 파일을 저장할 디렉토리 지정(기본값: "")
+ * 
+ */
+@WebServlet("/FileUploadServlet")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 10, maxFileSize = 1024 * 1024 * 30, maxRequestSize = 1024 * 1024
+		* 90)
+public class FileUploadServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		//Upload한 파일이 저장될 디렉토리 설정
+		String uploadPath = "d:/d_other/uploadFiles";
+		
+		//저장할 디렉토리가 없으면 새로 생성한다.
+		File uploadDir = new File(uploadPath);
+		if(!uploadDir.exists()) {
+			uploadDir.mkdirs();
+		}
+		
+		//파일이 아닌 데이터들은 getParameter()메서드나 getParameterValues()메서드를 이용하여 구한다.
+		String memId = request.getParameter("memId");
+		System.out.println("파일이 아닌 일반 데이터 : " + memId);
+		
+		String fileName = "";//파일명이 저장될 변수 선언
+		//업로드한 파일의 정보가 저장될 List객체 생성
+		List<UploadDetail> fileList = new ArrayList<UploadDetail>();
+		
+		/*
+		 * Servlet 3.0이상에 새롭게 추가된 파일 Upload용 메서드
+		 * 1. request.getParts(); ==>Part객체의 컬렉션을 반환한다.
+		 * 2. request.getParts("part이름"); : 지정한 이름을 가진 개별 Part객체를 반환한다.
+		 * 
+		 */
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

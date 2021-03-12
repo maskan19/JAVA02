@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="true" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_IMPORT_null">
+		<item value="C:\Users\PC-25\Desktop\file.war"/>
+		<item value="C:\Users\PC-25\Desktop\JSP_DEV.war11.war"/>
+		<item value="C:\Users\PC-25\Downloads\JSP_DEV.war"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v7.0"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Users\PC-25\Desktop\ServletTest2.war"/>
+		<item value="C:\Users\PC-25\Desktop\servletTest.war"/>
+		<item value="C:\Users\PC-25\Desktop\JSP_DEV.war"/>
+		<item value="C:\Users\PC-25\Desktop\filetest.war"/>
+		<item value="C:\Users\PC-25\Desktop\JSP_DEV.war11.war"/>
+	</list>
+</section>

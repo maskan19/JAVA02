@@ -1,0 +1,92 @@
+package kr.or.ddit.basic;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+//은행의 입출금을 쓰레드로 처리하는 예제
+//Lock객체를 이용한 동기화
+
+public class ThreadTest18 {
+
+	private int balance;
+
+	// 동기화 처리를 해주는 Lock객체 생성하기
+	private Lock lock = new ReentrantLock();
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	// 입금 메서드
+
+	public void deposit(int money) {
+		//lock()메서드를 try catch 블럭에서 사용하게 되면
+		//unlock()메서드는 finally 영역에서 호출하도록 한다.
+		try {
+			lock.lock();
+			balance += money; 
+//			lock.unlock(); unlock전에 catch문에 걸리면 unlock을 실행하지 않는다.
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			lock.unlock();
+		}
+		
+		
+		balance += money;
+	}
+
+	// 출금하는 메서드(출금 성공 : true, 출금 실패 : false 반환)
+	public boolean withdraw(int money) {
+		// Lock 객체는 lock()메서드로 락을 설정하고 반드시 unlock()메서드로 락을 해제해야한다.
+
+		lock.lock();
+		
+		boolean chk = false;
+		
+		if (balance >= money) {
+			for (int i = 1; i <= 10000000; i++) {
+			} // 시간 지연용
+
+			balance -= money;
+			System.out.println("메서드 안에서 balance = " + balance);
+			chk =  true;
+		} else {
+			chk =  false;
+		}
+		lock.unlock();
+		return chk;
+		
+	}
+
+	public static void main(String[] args) {
+
+		ThreadTest17 acount = new ThreadTest17();
+		acount.setBalance(10000); // 잔액 만원
+
+		// 익명구현체로 쓰레드 구현(1.8은 final없이 사용 가능)
+		Runnable test = new Runnable() {
+
+			@Override
+			public void run() {
+				// 6000원 출금하기
+				boolean result = acount.withdraw(6000);
+				System.out.println("쓰레드 안에서 result = " + result
+						+ ", balance = " + acount.getBalance());
+
+			}
+		};
+
+		Thread th1 = new Thread(test);
+		Thread th2 = new Thread(test);
+
+		th1.start();
+		th2.start();
+
+	}
+
+}
